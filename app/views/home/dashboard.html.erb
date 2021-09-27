@@ -1,0 +1,55 @@
+<h1 style="text-align: center">Dashboard</h1>
+
+<div style="width:80%; margin: auto">
+    <div>
+        <%= column_chart @sales_last_12_months, title: "Ventas ultimos 12 meses", prefix: "$", label: "Total", thousands: "," %>
+    </div>
+
+    <div style="display: inline-block; width: 50%">
+        <%= column_chart @quantity_last_12_months, title: "Cantidad de ventas ultimos 12 meses", label: "Cantidad", thousands: "," %>
+    </div>
+
+    <div style="display: inline-block; width: 49%">
+        <%= column_chart @monthly_average_sales, title: "Promedio de ventas mensual", prefix: "$", label: "Promedio", thousands: ",", round: 0 %>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center">Pie Charts: Cantidad de ventas segun origen</h3>
+
+    <div>
+        <%= pie_chart @pie_charts_origin_12_months, title: "Ultimos 12 meses", height: '700px', label: "Cantidad", thousands: "," %>
+    </div>
+    <div style="display: inline-block; width: 49%">
+        <%= pie_chart @pie_charts_origin_6_months, title: "Ultimos 6 meses", label: "Cantidad" %>
+    </div>
+    <div style="display: inline-block; width: 49%">
+        <%= pie_chart @pie_charts_origin_3_months, title: "Ultimos 3 meses", label: "Cantidad" %>
+    </div>
+    <div>
+        <%= pie_chart @pie_charts_origin_last_month, title: "Ultimo mes", height: '400px', label: "Cantidad" %>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <h3 style="text-align: center">Pie Charts: Cantidad de ventas segun mezcla</h3>
+    
+    <div>
+        <%= pie_chart @pie_charts_blend_name_12_months, title: "Ultimos 12 meses", height: '700px', label: "Cantidad", thousands: "," %>
+    </div>
+    <div style="display: inline-block; width: 49%">
+        <%= pie_chart @pie_charts_blend_name_6_months, title: "Ultimos 6 meses", label: "Cantidad" %>
+    </div>
+    <div style="display: inline-block; width: 49%">
+        <%= pie_chart @pie_charts_blend_name_3_months, title: "Ultimos 3 meses", label: "Cantidad" %>
+    </div>
+    <div>
+        <%= pie_chart @pie_charts_blend_name_last_month, title: "Ultimo mes", height: '400px', label: "Cantidad" %>
+    </div>
+    
+</div>
+
